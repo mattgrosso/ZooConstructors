@@ -31,6 +31,14 @@
 
     });
 
+    test('all lemurs must have names', function (){
+      assert.throws(function() {window.ns.Lemur();}, Error, 'All animals deserve a name', 'Gave the animal a name');
+    });
+
+    test('lemurs are afraid of numbers outside of 0-10', function (){
+      var lemur = new window.ns.Lemur('papa', 'March 22, 1996');
+      assert.throws(function() {lemur.jump(50);}, Error, 'Please enter a number between 0 and 10', 'Lemurs can only be so scared');
+    });
 
   });
 

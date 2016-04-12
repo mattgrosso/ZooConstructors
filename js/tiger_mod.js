@@ -3,6 +3,7 @@
 
   ns.Tiger = function Tiger(name, dob) {
     ns.Animal.call(this, name, dob);
+    this.species = 'Tiger';
   };
 
   ns.Tiger.prototype = Object.create(ns.Animal.prototype);
