@@ -31,6 +31,16 @@
 
     });
 
+    test('all tigers must have names', function (){
+      assert.throws(function() {window.ns.Tiger();}, Error, 'All animals deserve a name', 'Gave the animal a name');
+    });
+
+    test('no length given for tiger running', function (){
+      var tiger = new window.ns.Tiger('rex', 'March 22, 1996');
+      assert.throws(function() {tiger.run();}, TypeError, 'Please give a duration for running', 'Tigers love to run');
+    });
+
+
 
   });
 

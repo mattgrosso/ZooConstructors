@@ -2,8 +2,13 @@
   'use strict';
 
   ns.Tiger = function Tiger(name, dob) {
-    ns.Animal.call(this, name, dob);
-    this.species = 'Tiger';
+    if(typeof name === 'string'){
+      ns.Animal.call(this, name, dob);
+      this.species = 'Tiger';
+    }
+    else {
+      throw new Error ('All animals deserve a name');
+    }
   };
 
   ns.Tiger.prototype = Object.create(ns.Animal.prototype);
@@ -15,6 +20,9 @@
   };
 
   ns.Tiger.prototype.run = function run(durationMinutes) {
+    if( !Number(durationMinutes) ){
+      throw new TypeError ('Please give a duration for running');
+    }
     return (durationMinutes * 100) + " miles";
   };
 
